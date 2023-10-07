@@ -1,0 +1,27 @@
+javascript
+function printObjectProperties(array, propertyToPrint) {
+ array.forEach((obj, index) => {
+    console.log(`Index: ${index}`);
+    for (let key in obj) {
+      if (!propertyToPrint || propertyToPrint === key) {
+        console.log(`${key}: ${obj[key]}`);
+      }
+    }
+ });
+}
+
+let arrayOfObjects = [
+ {
+    topic: "JavaScript",
+    time_spent: 200,
+    confidence_level: 0.8,
+ },
+ {
+    topic: "Python",
+    time_spent: 150,
+    confidence_level: 0.7,
+ },
+];
+
+printObjectProperties(arrayOfObjects);
+printObjectProperties(arrayOfObjects, "topic");
